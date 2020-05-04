@@ -25,13 +25,11 @@ function Friend(){
             setLoading(false);
           });
       }, [next]);
-
-      console.log(next);
       
     return (
       <div>
         <h1>Friends for all!!</h1> 
-        {error && <h1>Unable to fetch data</h1>  }
+        {error && <h1>Unable to fetch data</h1>}
         {isLoading && <h1>loading...</h1> }
         {friend && <FriendProfile 
         firstName={friend.name? friend.name.first: 'uploading'} 

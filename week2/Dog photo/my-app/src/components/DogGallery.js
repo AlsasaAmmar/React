@@ -8,7 +8,7 @@ const url = "https://dog.ceo/api/breeds/image/random";
 
 function DogGallery(){
   
-    const [noPhotoYet, setNoPhotoYet] = useState(true);
+    const [loading, setLoading] = useState(true);
     const [dogPhotos, setDogPhotos] = useState([]); 
     const [error, setError] = useState(false);
 
@@ -17,19 +17,20 @@ function DogGallery(){
       fetch(url)
             .then(res => res.json())
             .then(data => {
-              setNoPhotoYet(false)
+              setLoading(false)
               setDogPhotos(dogPhotos.concat(data.message))
             })
             .catch(err => {
               console.log("error", err);
               setError(true);
-              setNoPhotoYet(false);
-            });
+              setLoading(false);
+            })
+            .finally (()=> setLoading(false)) 
     }
     return (
       <div>
         {error && <h1>Unable to fetch data</h1>}
-        {noPhotoYet && <p>Press the button to get a cute doggy!</p> }
+        {loading && <p>Press the button to get a cute doggy!</p> }
         <Button handleButton={getDogPhoto} text={"Get me a doggy please!!"}/> 
         <DogPhoto photosUrl={dogPhotos}/>
       </div>

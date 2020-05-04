@@ -4,10 +4,6 @@ import Count from './Count';
 
 
 
-
-
-
-
 const Counter = () =>{
   const [count, setCount] = useState(0);
   function increaseCount(){
@@ -23,8 +19,3 @@ const Counter = () =>{
 }
 
 export default Counter;
-
-// <button onClick={()=> setCount(count+1 )}>
-// 'You have clicked{count}'
-// </button>
-// )

@@ -3,8 +3,9 @@ import Hobbies from './Hobbies';
 
 
 
-const HobbyList = (props)=> {
-  const hobbies = props.passedHobbies; 
+
+const HobbyList = ()=> {
+  const hobbies = ["Surfing", "Rock climbing", "Mountain biking", "Breakdancing"];
   return (
     <div>
        <h1> Hobby List</h1>

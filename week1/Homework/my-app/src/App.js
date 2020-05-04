@@ -1,20 +1,16 @@
 import React from 'react';
-import HobbyList from './HobbyList';
-import Guarantee from './Guarantee';
-import Counter from './Counter'
+import HobbyList from './components/hobby list app/HobbyList';
+import Guarantee from './components/guarantee app/Guarantee';
+import Counter from './components/counter app/Counter';
 
-
-function App(props) {
-  const passedHobbies = props.hobbies; 
-  const guaranteeBar = props.guaranteeBar;
-  return (
-    <div className="App">
-     <HobbyList passedHobbies= {passedHobbies}/>
-     {guaranteeBar.map(item => {
-          return <Guarantee item={item}/>})}
-      <Counter />
-    </div>
-  );
+function App() {
+	return (
+		<div className="App">
+			<HobbyList />
+			<Guarantee />
+			<Counter />
+		</div>
+	);
 }
 
 export default App;
